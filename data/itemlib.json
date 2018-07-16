@@ -1,0 +1,83 @@
+{
+    "1": {
+        "id": 1,
+        "name": "Wood Pickaxe",
+        "type": "tool",
+        "desc": "A Pickaxe contructed of the finest wood.",
+        "value": 10,
+        "modifier": 0.5,
+        "toughness": 50,
+        "durability": 500,
+        "recipe": ["wood", "wood", "wood"]
+    },
+    "2": {
+        "id": 2,
+        "name": "Stone Pickaxe",
+        "type": "tool",
+        "desc": "A Pickaxe of the finest cryptocrystalline rocks.",
+        "value": 50,
+        "modifier": 1,
+        "toughness": 150,
+        "durability": 1000,
+        "recipe": ["wood", "stone", "stone"]
+    },
+    "3": {
+        "id": 3,
+        "name": "Copper Pickaxe",
+        "type": "tool",
+        "desc": "A coldforged Pickaxe of copper.",
+        "value": 500,
+        "modifier": 1.5,
+        "toughness": 250,
+        "durability": 500,
+        "recipe": ["wood", "copper", "copper", "copper"]
+    },
+    "4": {
+        "id": 4,
+        "name": "Iron Pickaxe",
+        "type": "tool",
+        "desc": "A coldforged Pickaxe of iron.",
+        "value": 750,
+        "modifier": 2,
+        "toughness": 250,
+        "durability": 2000,
+        "recipe": [
+            "wood",
+            "iron",
+            "iron",
+            "iron"
+        ]
+    },
+    "5": {
+        "id": 5,
+        "name": "Bronze Pickaxe",
+        "type": "tool",
+        "desc": "A pickaxe made from bronze.",
+        "value": 1500,
+        "modifier": 4,
+        "toughness": 300,
+        "durability": 3000,
+        "recipe": [
+            "wood",
+            "bronze",
+            "bronze",
+            "bronze"
+        ]
+    },
+    "6": {
+        "id": 6,
+        "name": "Steel Pickaxe",
+        "type": "tool",
+        "desc": "A pickaxe made from the finest steel blend.",
+        "value": 2000,
+        "modifier": 5,
+        "toughness": 350,
+        "durability": 5000,
+        "recipe": [
+            "wood",
+            "steel",
+            "steel",
+            "steel"
+        ]
+    }
+}
