@@ -1,83 +1,96 @@
 {
     "1": {
-        "id": 1,
-        "name": "Wood Pickaxe",
-        "type": "tool",
         "desc": "A Pickaxe contructed of the finest wood.",
-        "value": 10,
-        "modifier": 0.5,
-        "toughness": 50,
         "durability": 500,
-        "recipe": ["wood", "wood", "wood"]
+        "id": 1,
+        "modifier": 0.5,
+        "name": "Wood Pickaxe",
+        "recipe": [
+            "wood",
+            "wood",
+            "wood"
+        ],
+        "toughness": 50,
+        "type": "pickaxe",
+        "value": 10
     },
     "2": {
-        "id": 2,
-        "name": "Stone Pickaxe",
-        "type": "tool",
         "desc": "A Pickaxe of the finest cryptocrystalline rocks.",
-        "value": 50,
-        "modifier": 1,
-        "toughness": 150,
         "durability": 1000,
-        "recipe": ["wood", "stone", "stone"]
+        "id": 2,
+        "modifier": 1,
+        "name": "Stone Pickaxe",
+        "recipe": [
+            "wood",
+            "stone",
+            "stone"
+        ],
+        "toughness": 150,
+        "type": "pickaxe",
+        "value": 50
     },
     "3": {
-        "id": 3,
-        "name": "Copper Pickaxe",
-        "type": "tool",
         "desc": "A coldforged Pickaxe of copper.",
-        "value": 500,
-        "modifier": 1.5,
-        "toughness": 250,
         "durability": 500,
-        "recipe": ["wood", "copper", "copper", "copper"]
+        "id": 3,
+        "modifier": 1.5,
+        "name": "Copper Pickaxe",
+        "recipe": [
+            "wood",
+            "copper",
+            "copper",
+            "copper"
+        ],
+        "toughness": 250,
+        "type": "pickaxe",
+        "value": 500
     },
     "4": {
-        "id": 4,
-        "name": "Iron Pickaxe",
-        "type": "tool",
         "desc": "A coldforged Pickaxe of iron.",
-        "value": 750,
-        "modifier": 2,
-        "toughness": 250,
         "durability": 2000,
+        "id": 4,
+        "modifier": 2,
+        "name": "Iron Pickaxe",
         "recipe": [
             "wood",
             "iron",
             "iron",
             "iron"
-        ]
+        ],
+        "toughness": 250,
+        "type": "pickaxe",
+        "value": 750
     },
     "5": {
-        "id": 5,
-        "name": "Bronze Pickaxe",
-        "type": "tool",
         "desc": "A pickaxe made from bronze.",
-        "value": 1500,
-        "modifier": 4,
-        "toughness": 300,
         "durability": 3000,
+        "id": 5,
+        "modifier": 4,
+        "name": "Bronze Pickaxe",
         "recipe": [
             "wood",
             "bronze",
             "bronze",
             "bronze"
-        ]
+        ],
+        "toughness": 300,
+        "type": "pickaxe",
+        "value": 1500
     },
     "6": {
-        "id": 6,
-        "name": "Steel Pickaxe",
-        "type": "tool",
         "desc": "A pickaxe made from the finest steel blend.",
-        "value": 2000,
-        "modifier": 5,
-        "toughness": 350,
         "durability": 5000,
+        "id": 6,
+        "modifier": 5,
+        "name": "Steel Pickaxe",
         "recipe": [
             "wood",
             "steel",
             "steel",
             "steel"
-        ]
+        ],
+        "toughness": 350,
+        "type": "pickaxe",
+        "value": 2000
     }
 }

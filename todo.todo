@@ -1,0 +1,24 @@
+# testing
+✔ Item test @done(18-07-19 21:16)
+    ✔ create item @done(18-07-19 22:19)
+    ✔ delete item @done(18-07-19 22:19)
+    ✔ get item @done(18-07-19 21:17)
+
+✔ Player test @done(18-07-19 11:01)
+    ✔ Character test @done(18-07-19 11:01)
+    ☐ add / get item
+    ☐ Inc /dec mats
+    ☐ test mining with and without pick
+    ☐ mining cooldown
+
+
+# Implement pickaxe efficiency into time used mining
+☐ Pickaxe efficiency
+☐ Pickaxe durability
+☐ Material combinating ( steel, bronze )
+☐ Crafting pickaxes
+
+☐ Other activities like woodchopping
+☐ farming for food (?)
+☐ weapon crafting
+☐ adventure / fighting. (duels?)

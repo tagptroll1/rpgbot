@@ -3,9 +3,9 @@ from time import sleep
 from functools import wraps
 from datetime import timedelta, datetime
 
-from rpg.item import Item, Pickaxe
-from rpg.character import Character
-from rpg import activity
+from item import Item, Pickaxe
+from character import Character
+import activity
 
 class NotEnoughMaterialError(Exception):
     pass
@@ -29,6 +29,41 @@ class Player(Character):
         self.__worktimer = None
         self.pickaxe = None
 
+    @property
+    def wood(self):
+        return self.mats["wood"]
+
+    @property
+    def stone(self):
+        return self.mats["stone"]
+
+    @property
+    def coal(self):
+        return self.mats["coal"]
+
+    @property
+    def iron(self):
+        return self.mats["iron"]
+
+    @property
+    def copper(self):
+        return self.mats["copper"]
+
+    @property
+    def tin(self):
+        return self.mats["tin"]
+
+    @property
+    def bronze(self):
+        return self.mats["bronze"]
+
+    @property
+    def steel(self):
+        return self.mats["steel"]
+
+    @property
+    def diamond(self):
+        return self.mats["diamond"]
 
     def add_item(self, item):
         if not isinstance(item, Item):
@@ -85,20 +120,16 @@ class Player(Character):
     def mine(self):
         if not self.pickaxe:
             if not self.find_pick():
-                print("You don't have a pickaxe")
                 return
         if self.__worktimer:
             d, h, m, s = self.time_remaining()
             if not d.days < 0:
-                print(f"You're still on cooldown! timeleft: {str(d).split('.')[0]}")
                 return
             else:
                 self.__worktimer = None
-                print("reset worker")
-
+                
         now = datetime.utcnow()
         self.__worktimer = now + timedelta(seconds=1)
-        print("mined")
         can_mine = activity.get_minable(self.pickaxe.toughness)
         for x in range(randint(0, self.pickaxe.toughness//25)):
             self.inc_mat(choice(can_mine), randint(0,self.pickaxe.modifier))
@@ -133,14 +164,3 @@ class Player(Character):
         )
 
 
-
-player = Player("Bob", "Elf")
-print(player)
-player.mine()
-player.add_item(Pickaxe(5))
-player.mine()
-player.mine()
-
-sleep(2)
-player.mine()
-print(player)
