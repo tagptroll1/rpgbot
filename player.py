@@ -95,9 +95,9 @@ class Player(Character):
         if self.mats[mat] < amt:
             raise NotEnoughMaterialError
 
-        self.mats[mat] -= mat
+        self.mats[mat] -= amt
 
-    def time_remaining(self):
+    def __time_remaining(self):
         now = datetime.utcnow()
         timeleft = self.__worktimer - now
         total = timeleft.total_seconds()
@@ -105,7 +105,7 @@ class Player(Character):
         h, m = divmod(m, 60)
         return timeleft, h, m, s
 
-    def find_pick(self):
+    def __find_pick(self):
         best = None
         for x in range(7):
             if x in self.items:
@@ -119,10 +119,10 @@ class Player(Character):
 
     def mine(self):
         if not self.pickaxe:
-            if not self.find_pick():
+            if not self.__find_pick():
                 return
         if self.__worktimer:
-            d, h, m, s = self.time_remaining()
+            d, h, m, s = self.__time_remaining()
             if not d.days < 0:
                 return
             else:

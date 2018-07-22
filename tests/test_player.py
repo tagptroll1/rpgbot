@@ -1,6 +1,6 @@
 import unittest
 
-from player import Player
+from player import Player, NotEnoughMaterialError
 from character import Character
 import item
 
@@ -109,6 +109,90 @@ class PlayerTest(unittest.TestCase):
         if item9999:
             item.add_item(__id=9999, **item9999.__dict__)
 
+    def test_add_item_to_player(self):
+        p = self.player1
+
+        self.assertIsInstance(p.items, dict)
+        self.assertFalse(p.items)
+
+        # stone pickaxe, id 2
+        pick = item.get_item(2)
+        p.add_item(pick)
+
+        self.assertIsInstance(p.items, dict)
+        self.assertTrue(p.items)
+        self.assertEqual(len(p.items), 1)
+        self.assertDictEqual(p.items, {2:{"item": pick, "amount": 1}})
+        self.assertIs(p.items[2]["item"], pick)
+
+        # copper pickaxe, id 3
+        pick2 = item.get_item(3)
+        p.add_item(pick2)
+
+        self.assertIsInstance(p.items, dict)
+        self.assertTrue(p.items)
+        self.assertEqual(len(p.items), 2)
+        self.assertDictEqual(p.items, {
+            2: {
+                "item": pick,
+                "amount": 1
+            },
+            3: {
+                "item": pick2,
+                "amount": 1
+            }
+        })
+        self.assertIs(p.items[2]["item"], pick)
+        self.assertIs(p.items[3]["item"], pick2)
+
+        p.add_item(pick2)
+
+        self.assertIsInstance(p.items, dict)
+        self.assertTrue(p.items)
+        self.assertEqual(len(p.items), 2)
+        self.assertDictEqual(p.items, {
+            2: {
+                "item": pick,
+                "amount": 1
+            },
+            3: {
+                "item": pick2,
+                "amount": 2
+            }
+        })
+        self.assertIs(p.items[2]["item"], pick)
+        self.assertIs(p.items[3]["item"], pick2)
+
+    def test_player_get_item(self):
+        p = self.player1
+        self.assertIsNone(p.get_item(2))
+
+        i = item.get_item(2)
+        p.add_item(i)
+        self.assertEqual(i, p.get_item(2)["item"])
+
+        del p.items[2]
+        self.assertIsNone(p.get_item(2))
+
+
+    def test_player_mats(self):
+        """Test incrementing and derementing materials"""
+        p = self.player1
+        for mat in p.mats.values():
+            self.assertEqual(mat, 0)
+
+        for mat in p.mats:
+            p.inc_mat(mat, 5)
+            self.assertEqual(getattr(p, mat), 5)
+            p.dec_mat(mat, 3)
+            self.assertEqual(getattr(p, mat), 2)
+            p.dec_mat(mat, 2)
+            self.assertEqual(getattr(p, mat), 0)
+
+            self.assertRaises(ValueError, p.dec_mat, mat, -1)
+            self.assertRaises(ValueError, p.inc_mat, mat, -1)
+            self.assertRaises(NotEnoughMaterialError, p.dec_mat, mat, 5)
+            self.assertEqual(getattr(p, mat), 0)
 
 
 if __name__ == "__main__":

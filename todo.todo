@@ -6,7 +6,7 @@
 
 ✔ Player test @done(18-07-19 11:01)
     ✔ Character test @done(18-07-19 11:01)
-    ☐ add / get item
+    ✔ add / get item @done(18-07-21 19:35)
     ☐ Inc /dec mats
     ☐ test mining with and without pick
     ☐ mining cooldown
